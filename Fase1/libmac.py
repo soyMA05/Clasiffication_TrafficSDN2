@@ -34,7 +34,7 @@ def etiquetar_unirdatosdeclase(_dictarchidatos:dict, caracteristica:str, dir_gua
         print("En proceso de clase %s..." % (clase))
         for archivo in range(len(directorio)):
             archivo_exdata = str(_dictarchidatos[clase][archivo])
-            df = pd.read_csv(archivo_exdata)
+            df = pd.read_csv(archivo_exdata, low_memory=False)
             df[caracteristica]=clase
             dataframes.append(df)
 
